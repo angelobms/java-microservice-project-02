@@ -17,7 +17,12 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
     private static final String ROLE_OPERETOR = "OPERETOR";
     private static final String[] PUBLIC = { "/hr-ms-oauth/oauth/token" };
     private static final String[] OPERETOR = { "/hr-ms-worker/**" };
-    private static final String[] ADMIN = { "/hr-ms-payroll/**", "/hr-ms-user/**" };
+    private static final String[] ADMIN = {
+            "/hr-ms-payroll/**",
+            "/hr-ms-user/**",
+            "/actuator/**",
+            "/hr-ms-worker/actuator/**",
+            "/hr-ms-oauth/actuator/**" };
 
     @Autowired
     private JwtTokenStore tokenStore;
